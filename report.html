@@ -13152,7 +13152,10 @@ iwUtaEHXRf8Hjey220QasJIAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Question 2:</strong> This algorithmic choice necessitates that we communicate to the user that we accept human images only when they provide a clear view of a face (otherwise, we risk having unneccessarily frustrated users!). In your opinion, is this a reasonable expectation to pose on the user? If not, can you think of a way to detect humans in images that does not necessitate an image with a clearly presented face?</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong><br>
+<strong>Code Review Suggestion</strong><br>
+Its not a reasonable expectation, as a first step, to ask the user to provicde an image with a clear view of the face. We can howerver, use the below mentioned harcascase/lbpcascade to do the first level of verification on the algorithm side. If the harcascade is <em>not</em> able to detect a face, then we may ask the use <strong>or</strong> simply inform the user that a face has not been detected and continue with the algorithm.
+So, harcascades/lbpcascades are appropriate techniques for detecting human faces.</p>
 <p>We suggest the face detector from OpenCV as a potential way to detect human images in your algorithm, but you are free to explore other approaches, especially approaches that make use of deep learning :).  Please use the code cell below to design and test your own face detection algorithm.  If you decide to pursue this <em>optional</em> task, report performance on each of the datasets.</p>
 
 </div>
@@ -14230,7 +14233,9 @@ test_{network} = bottleneck_features['test']</code></pre>
 
 </code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong><br>
+<strong>Code Review Suggestion</strong><br>
+ResNet50 is a pre-trained model on similar and a very large dataset and already has 'gained knowledge' from that data, that is available as weights. We use this available 'knowledge' as a starting point which allows this model to outperform the previous model.</p>
 
 </div>
 </div>
